@@ -8,64 +8,56 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Cyberpunk Dark Theme */
-    --background: 240 10% 3.9%;
-    --foreground: 180 100% 90%;
+    /* Purple/Blue Theme */
+    --background: 260 20% 5%;
+    --foreground: 220 100% 90%;
 
-    --card: 240 10% 8%;
-    --card-foreground: 180 100% 90%;
+    --card: 260 20% 10%;
+    --card-foreground: 220 100% 90%;
 
-    --popover: 240 10% 8%;
-    --popover-foreground: 180 100% 90%;
+    --popover: 260 20% 10%;
+    --popover-foreground: 220 100% 90%;
 
-    --primary: 180 100% 50%;
-    --primary-foreground: 240 10% 3.9%;
+    --primary: 270 100% 60%;
+    --primary-foreground: 220 100% 90%;
 
-    --secondary: 280 100% 60%;
-    --secondary-foreground: 240 10% 3.9%;
+    --secondary: 220 100% 50%;
+    --secondary-foreground: 220 100% 90%;
 
-    --muted: 240 10% 15%;
-    --muted-foreground: 180 50% 60%;
+    --muted: 260 20% 15%;
+    --muted-foreground: 240 60% 75%;
 
-    --accent: 320 100% 60%;
-    --accent-foreground: 240 10% 3.9%;
+    --accent: 190 100% 50%;
+    --accent-foreground: 260 20% 5%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 240 10% 20%;
-    --input: 240 10% 15%;
-    --ring: 180 100% 50%;
+    --sidebar-accent: 260 20% 15%;
+    --sidebar-accent-foreground: 220 100% 95%;
+    --sidebar-border: 260 20% 20%;
+    --sidebar-ring: 270 100% 60%;
 
     --radius: 0.75rem;
 
     /* Neon Colors */
-    --neon-cyan: 180 100% 50%;
-    --neon-magenta: 320 100% 60%;
-    --neon-purple: 280 100% 60%;
-    --neon-green: 120 100% 50%;
+    --neon-cyan: 190 100% 50%;
+    --neon-blue: 225 100% 60%;
+    --neon-purple: 270 100% 60%;
+    --neon-green: 240 100% 60%;
 
     /* Glassmorphism */
-    --glass-bg: 240 10% 8% / 0.3;
-    --glass-border: 180 100% 50% / 0.2;
+    --glass-bg: 260 20% 10% / 0.3;
+    --glass-border: 270 100% 60% / 0.2;
 
     /* Gradients */
-    --gradient-cyber: linear-gradient(135deg, hsl(180 100% 50% / 0.1), hsl(320 100% 60% / 0.1));
-    --gradient-dark: linear-gradient(180deg, hsl(240 10% 3.9%), hsl(240 10% 8%));
+    --gradient-cyber: linear-gradient(135deg, hsl(270 100% 60% / 0.1), hsl(225 100% 60% / 0.1));
+    --gradient-dark: linear-gradient(180deg, hsl(260 20% 5%), hsl(260 20% 10%));
 
     /* Shadows & Glows */
-    --shadow-neon-cyan: 0 0 20px hsl(180 100% 50% / 0.5), 0 0 40px hsl(180 100% 50% / 0.3);
-    --shadow-neon-magenta: 0 0 20px hsl(320 100% 60% / 0.5), 0 0 40px hsl(320 100% 60% / 0.3);
+    --shadow-neon-cyan: 0 0 20px hsl(190 100% 50% / 0.5), 0 0 40px hsl(190 100% 50% / 0.3);
+    --shadow-neon-blue: 0 0 20px hsl(225 100% 60% / 0.5), 0 0 40px hsl(225 100% 60% / 0.3);
     --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
-    --sidebar-background: 240 10% 5%;
-    --sidebar-foreground: 180 100% 90%;
-    --sidebar-primary: 180 100% 50%;
-    --sidebar-primary-foreground: 240 10% 3.9%;
-    --sidebar-accent: 240 10% 10%;
-    --sidebar-accent-foreground: 180 100% 90%;
-    --sidebar-border: 240 10% 20%;
-    --sidebar-ring: 180 100% 50%;
   }
 
   .dark {
@@ -82,8 +74,8 @@ All colors MUST be HSL.
     box-shadow: var(--shadow-neon-cyan);
   }
 
-  .neon-glow-magenta {
-    box-shadow: var(--shadow-neon-magenta);
+  .neon-glow-blue {
+    box-shadow: var(--shadow-neon-blue);
   }
 
   .animate-glow {
@@ -94,8 +86,9 @@ All colors MUST be HSL.
     from {
       box-shadow: 0 0 10px hsl(180 100% 50% / 0.3);
     }
+
     to {
-      box-shadow: 0 0 30px hsl(180 100% 50% / 0.6), 0 0 50px hsl(320 100% 60% / 0.4);
+      box-shadow: 0 0 30px hsl(180 100% 50% / 0.6), 0 0 50px hsl(225 100% 60% / 0.4);
     }
   }
 }

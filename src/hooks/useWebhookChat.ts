@@ -17,7 +17,7 @@ export const useWebhookChat = () => {
   // Fetch greeting from n8n when chat opens
   const initChat = useCallback(async () => {
     if (initialized) return;
-    
+
     setLoading(true);
     setInitialized(true);
 

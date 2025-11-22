@@ -21,7 +21,7 @@ export const StatusChart = ({ data }: StatusChartProps) => {
 
   const COLORS = [
     'hsl(var(--neon-cyan))',
-    'hsl(var(--neon-magenta))',
+    'hsl(var(--neon-blue))',
     'hsl(var(--neon-purple))',
     'hsl(var(--neon-green))',
   ];
@@ -34,10 +34,10 @@ export const StatusChart = ({ data }: StatusChartProps) => {
       className="glass-card p-6 rounded-xl"
     >
       <h2 className="text-2xl font-bold text-primary mb-6 font-display flex items-center gap-2">
-        <span className="w-2 h-2 bg-neon-magenta rounded-full animate-pulse-glow" />
+        <span className="w-2 h-2 bg-neon-blue rounded-full animate-pulse-glow" />
         Status Distribution
       </h2>
-      
+
       <div className="h-[300px]">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
@@ -55,7 +55,7 @@ export const StatusChart = ({ data }: StatusChartProps) => {
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
               ))}
             </Pie>
-            <Tooltip 
+            <Tooltip
               contentStyle={{
                 backgroundColor: 'hsl(var(--card))',
                 border: '1px solid hsl(var(--border))',
@@ -63,7 +63,7 @@ export const StatusChart = ({ data }: StatusChartProps) => {
                 color: 'hsl(var(--foreground))',
               }}
             />
-            <Legend 
+            <Legend
               wrapperStyle={{
                 color: 'hsl(var(--foreground))',
               }}

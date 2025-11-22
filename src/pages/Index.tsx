@@ -34,8 +34,8 @@ const Index = () => {
 
   const totalClients = data.length;
 
-  const activeClients = data.filter(item => 
-    item.Status.toLowerCase().includes('active') || 
+  const activeClients = data.filter(item =>
+    item.Status.toLowerCase().includes('active') ||
     item.Status.toLowerCase().includes('completed')
   ).length;
 
@@ -56,7 +56,7 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-card p-6 md:p-8 lg:p-12">
       {/* Animated background grid */}
       <div className="fixed inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
-      
+
       {/* Floating orbs for atmosphere */}
       <motion.div
         animate={{
@@ -81,7 +81,7 @@ const Index = () => {
           ease: "easeInOut",
           delay: 1,
         }}
-        className="fixed bottom-20 left-20 w-96 h-96 bg-neon-magenta/20 rounded-full blur-[120px] pointer-events-none"
+        className="fixed bottom-20 left-20 w-96 h-96 bg-neon-blue/20 rounded-full blur-[120px] pointer-events-none"
       />
 
       <div className="relative z-10 max-w-7xl mx-auto">
@@ -95,10 +95,10 @@ const Index = () => {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
               <h1 className="text-5xl md:text-6xl font-bold text-primary mb-3 font-display tracking-tight">
-                AI<span className="text-neon-magenta"> Dashboard</span>
+                AI<span className="text-neon-blue"> Dashboard</span>
               </h1>
               <p className="text-muted-foreground text-lg">
-                Real-time data analytics dashboard for business to streamline their Sheets data 
+                Real-time data analytics dashboard for business to streamline their Sheets data
               </p>
             </div>
             <div className="flex gap-4">
@@ -138,7 +138,7 @@ const Index = () => {
                 title="Total Clients"
                 value={totalClients}
                 icon={Users}
-                color="magenta"
+                color="blue"
                 delay={0.1}
               />
               <MetricCard
