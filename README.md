@@ -1,73 +1,109 @@
-# Welcome to your Lovable project
+# 📊 AI Dashboard with Smart Chatbot
 
-## Project info
+A modern dashboard application featuring an AI-powered chatbot that can read, update, and manage data in Google Sheets — all through natural conversation.
 
-**URL**: https://lovable.dev/projects/4754194c-50a3-4a32-b89c-861546276307
+## 🌐 Live Demo
 
-## How can I edit this code?
+**[View Live Dashboard]([https://your-vercel-app.vercel.app](https://ai-dashboard-with-chatbot.vercel.app/))**
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## ✨ What It Does
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/4754194c-50a3-4a32-b89c-861546276307) and start prompting.
+### Dashboard
+- View and visualize your data in real-time
+- Sync data from Google Sheets with one click
+- Clean, modern UI for easy data management
 
-Changes made via Lovable will be committed automatically to this repo.
+### AI Chatbot
+The built-in assistant can:
 
-**Use your preferred IDE**
+| Feature | Example |
+|---------|---------|
+| 📊 **View Data** | "Show me all entries" |
+| ✏️ **Update Records** | "Change John's status to completed" |
+| ➕ **Add Entries** | "Add a new record for Sarah" |
+| 🔍 **Search** | "Find all pending tasks" |
+| 📧 **Send Emails** | "Email John about the meeting tomorrow" |
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+The chatbot automatically fetches email addresses from your sheet and composes professional emails on your behalf.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 🛠️ Technical Details
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Tech Stack
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+| Component | Technology |
+|-----------|------------|
+| Frontend | React + TypeScript |
+| Styling | Tailwind CSS |
+| Hosting | Vercel |
+| Workflow Automation | n8n Cloud |
+| AI Model | Google Gemini |
+| Database | Google Sheets |
+| Email Service | Gmail API |
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Architecture
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+┌──────────────┐       POST       ┌──────────────┐       ┌──────────────┐
+│              │ ───────────────▶ │              │ ◀───▶ │    Google    │
+│   Frontend   │                  │  n8n Cloud   │       │    Sheets    │
+│   (Vercel)   │ ◀─────────────── │   Workflow   │       │              │
+│              │       JSON       │              │       └──────────────┘
+└──────────────┘                  └──────┬───────┘
+                                         │
+                                  ┌──────┴───────┐
+                                  │    Google    │
+                                  │    Gemini    │
+                                  │   AI Agent   │
+                                  └──────────────┘
+                                         │
+                                  ┌──────┴───────┐
+                                  │    Gmail     │
+                                  │     API      │
+                                  └──────────────┘
 ```
 
-**Edit a file directly in GitHub**
+### How It Works
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. **User sends a message** → Frontend POSTs to n8n webhook
+2. **n8n receives request** → Passes to AI Agent (Google Gemini)
+3. **AI processes intent** → Reads/updates Google Sheets as needed
+4. **Response generated** → Sent back to frontend
+5. **Email (if requested)** → AI fetches email from sheet & sends via Gmail
 
-**Use GitHub Codespaces**
+### Key Files
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```
+├── src/
+│   ├── hooks/
+│   │   └── useWebhookChat.ts    # Chat logic & API calls
+│   ├── components/
+│   │   └── ChatBot.tsx          # Chat UI component
+│   └── App.tsx                  # Main application
+├── .env                         # Environment variables (gitignored)
+└── README.md
+```
 
-## What technologies are used for this project?
+### Environment Variables
 
-This project is built with:
+```env
+VITE_WEBHOOK_URL=https://your-n8n-instance.app.n8n.cloud/webhook/dashboard
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 🚀 Deployment
 
-Simply open [Lovable](https://lovable.dev/projects/4754194c-50a3-4a32-b89c-861546276307) and click on Share -> Publish.
+### Frontend (Vercel)
+- Push to GitHub
+- Connect repo to Vercel
+- Add environment variables
+- Deploy
 
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### Backend (n8n Cloud)
+- Workflow hosted on n8n Cloud
+- Webhook URL: Production
+- Workflow status: Active
