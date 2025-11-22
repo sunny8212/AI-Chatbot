@@ -4,7 +4,7 @@ A modern dashboard application featuring an AI-powered chatbot that can read, up
 
 ## 🌐 Live Demo
 
-**[View Live Dashboard]([https://your-vercel-app.vercel.app](https://ai-dashboard-with-chatbot.vercel.app/))**
+**[View Live Dashboard]((https://ai-dashboard-with-chatbot.vercel.app/))**
 
 ---
 
