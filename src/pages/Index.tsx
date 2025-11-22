@@ -95,10 +95,10 @@ const Index = () => {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
               <h1 className="text-5xl md:text-6xl font-bold text-primary mb-3 font-display tracking-tight">
-                CYBER<span className="text-neon-magenta"> METRICS</span>
+                AI<span className="text-neon-magenta"> Dashboard</span>
               </h1>
               <p className="text-muted-foreground text-lg">
-                Real-time data analytics dashboard
+                Real-time data analytics dashboard for business to streamline their Sheets data 
               </p>
             </div>
             <div className="flex gap-4">
