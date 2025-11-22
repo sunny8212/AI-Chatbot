@@ -6,7 +6,7 @@ export interface ChatMessage {
   timestamp: Date;
 }
 
-const WEBHOOK_URL = 'https://sunny8212.app.n8n.cloud/webhook/dashboard';
+const WEBHOOK_URL = 'https://sunny8212.app.n8n.cloud/webhook-test/dashboard';
 
 export const useWebhookChat = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
