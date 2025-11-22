@@ -83,7 +83,7 @@ export const Chatbot = ({ onDataUpdate }: ChatbotProps) => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="fixed bottom-24 right-6 z-50 w-96 h-[500px] glass-panel rounded-xl shadow-2xl border border-border/30 overflow-hidden"
+            className="fixed bottom-24 right-6 z-50 w-96 h-[500px] bg-black rounded-xl shadow-2xl border border-border/30 overflow-hidden"
           >
             {/* Header */}
             <div className="bg-gradient-to-r from-neon-cyan/20 to-neon-magenta/20 border-b border-border/30 p-4">
