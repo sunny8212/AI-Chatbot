@@ -5,6 +5,7 @@ import { MetricCard } from '@/components/MetricCard';
 import { ClientTable } from '@/components/ClientTable';
 import { StatusChart } from '@/components/StatusChart';
 import { RefreshButton } from '@/components/RefreshButton';
+import { Chatbot } from '@/components/Chatbot';
 import { useToast } from '@/hooks/use-toast';
 import { useEffect } from 'react';
 
@@ -43,6 +44,11 @@ const Index = () => {
       title: 'Data synced',
       description: 'Dashboard updated with latest data from Google Sheets',
     });
+  };
+
+  const handleChatbotDataUpdate = (data: any) => {
+    // Trigger a refresh when chatbot provides new data
+    refresh();
   };
 
   return (
@@ -169,6 +175,9 @@ const Index = () => {
           <p>Last updated: {new Date().toLocaleString()}</p>
         </motion.div>
       </div>
+
+      {/* Chatbot */}
+      <Chatbot onDataUpdate={handleChatbotDataUpdate} />
     </div>
   );
 };
