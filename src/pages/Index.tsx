@@ -5,6 +5,7 @@ import { MetricCard } from '@/components/MetricCard';
 import { ClientTable } from '@/components/ClientTable';
 import { StatusChart } from '@/components/StatusChart';
 import { RefreshButton } from '@/components/RefreshButton';
+import { GoogleSheetsButton } from '@/components/GoogleSheetsButton';
 import { Chatbot } from '@/components/Chatbot';
 import { useToast } from '@/hooks/use-toast';
 import { useEffect } from 'react';
@@ -94,13 +95,16 @@ const Index = () => {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
               <h1 className="text-5xl md:text-6xl font-bold text-primary mb-3 font-display tracking-tight">
-                CYBER<span className="text-neon-magenta">METRICS</span>
+                CYBER<span className="text-neon-magenta"> METRICS</span>
               </h1>
               <p className="text-muted-foreground text-lg">
                 Real-time data analytics dashboard
               </p>
             </div>
-            <RefreshButton onClick={handleRefresh} loading={loading} />
+            <div className="flex gap-4">
+              <GoogleSheetsButton />
+              <RefreshButton onClick={handleRefresh} loading={loading} />
+            </div>
           </div>
         </motion.div>
 

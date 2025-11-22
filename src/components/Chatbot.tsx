@@ -14,15 +14,16 @@ interface ChatbotProps {
 export const Chatbot = ({ onDataUpdate }: ChatbotProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
-  const { messages, loading, sendMessage, clearMessages } = useWebhookChat();
+  const { messages, loading, sendMessage, clearMessages,initChat } = useWebhookChat();
   const { toast } = useToast();
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
+      initChat()
     }
-  }, [messages]);
+  }, [messages, initChat]);
 
   const handleSend = async () => {
     if (!input.trim() || loading) return;
@@ -34,13 +35,7 @@ export const Chatbot = ({ onDataUpdate }: ChatbotProps) => {
       const response = await sendMessage(messageText);
       
       // Check if response contains dashboard data to update
-      if (onDataUpdate && response) {
-        onDataUpdate(response);
-        toast({
-          title: 'Dashboard updated',
-          description: 'Data received from chatbot',
-        });
-      }
+      
     } catch (error) {
       toast({
         title: 'Error',
